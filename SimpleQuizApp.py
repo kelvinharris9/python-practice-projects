@@ -20,7 +20,10 @@ def ask_question(question, correct_answer):
     print(question)
     # Read in user's answer
     user_answer = input("Your answer: ").title().strip()
+    # If the correct answer argument is a tuple because
+    # the quiz accepts the answer written in multiple ways
     if isinstance(correct_answer, tuple):
+        # If the user's input is one of the tuple elements
         if user_answer in correct_answer:
             # Tell the user the answer is correct
             print("Correct!")
@@ -31,6 +34,7 @@ def ask_question(question, correct_answer):
             # the correct answer
             print(f"Incorrect.  The correct answer is {correct_answer[0]}.")
     else:
+        # If the user inputs the correct answer
         if user_answer == correct_answer:
             # Tell the user the answer is correct
             print("Correct!")
