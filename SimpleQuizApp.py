@@ -1,91 +1,68 @@
-# Introduction/greeting
-print("Hello.  You are about to take a 5-question quiz.")
+# Initialize user_score variable
+user_score = 0
+#Introduction/greeting function
+def greeting():
+    # Introduction/greeting
+    print("Hello.  You are about to take a 5-question quiz.")
+    # Print blank line
+    print()
 
-# Print blank line
-print()
+# Function to increment the user score variable
+def update_score():
+    # Allow this function to modify the global user_score variable
+    global user_score
+    # Increment global user_score variable
+    user_score += 1
 
-#Initialize score variable to 0
-score = 0
+# Function to ask question and read in user answer
+def ask_question(question, correct_answer):
+    # Ask the question
+    print(question)
+    # Read in user's answer
+    user_answer = input("Your answer: ").title().strip()
+    if isinstance(correct_answer, tuple):
+        if user_answer in correct_answer:
+            # Tell the user the answer is correct
+            print("Correct!")
+            update_score()
+        # Otherwise...
+        else:
+            # Tell the user the answer is incorrect and tell them
+            # the correct answer
+            print(f"Incorrect.  The correct answer is {correct_answer[0]}.")
+    else:
+        if user_answer == correct_answer:
+            # Tell the user the answer is correct
+            print("Correct!")
+            update_score()
+        # Otherwise...
+        else:
+            # Tell the user the answer is incorrect and tell them
+            # the correct answer
+            print(f"Incorrect.  The correct answer is {correct_answer}.")
+    # Print blank line
+    print()
 
-# Ask question 1 and read in user input
-answer_1 = input("1) What is the capital of France? ").lower().strip()
-# If the user answers "Paris", tell them they are correct
-if answer_1 == "paris":
-    print("Correct!")
-    # Add one to the score variable for the correct answer
-    score += 1
-# If the user answers anything other than "Paris",
-# tell them the answer is incorrect and give them
-# the correct answer
-else:
-    print("Incorrect.  The answer is \"Paris\".")
-# Print blank line
-print()
+def display_user_score():
+    # Display user's quiz score
+    print(f"You scored {user_score} out of 5 ({(user_score/5) * 100:.0f}%) on the quiz.")
 
-# Ask question 2 and read in user input
-answer_2 = input("2) How many planets are in our solar system?"
-                 " (Enter your answer as an integer) ").lower().strip()
-# If the user answers "8", tell them they are correct
-if answer_2 == "8":
-    print("Correct!")
-    # Add 1 to score variable for correct answer
-    score += 1
-# If user answers anything other than "8", tell them
-# the answer is incorrect and give them the correct
-# answer
-else:
-    print("Incorrect.  The answer is 8.")
-#print blank line
-print()
+# Define the main function
+def main():
+    # Call greeting() function
+    greeting()
+    # Call ask_question() function 5 times (1 for each quiz question)
+    ask_question("1) What is the capital of France?", "Paris")
+    ask_question("2) How many planets are in our solar system?", ("8", "Eight"))
+    ask_question("3) What year did World War II end? (enter "
+                 "your answer as an integer)", "1945")
+    ask_question("4) What is the largest ocean on Earth?",
+                 ("Pacific", "Pacific Ocean", "The Pacific Ocean", "The Pacific"))
+    ask_question("5) How many sides does a hexagon have?", ("6", "Six"))
+    # Call display_user_score() function
+    display_user_score()
 
-# Ask question 3 and read in user input
-answer_3 = input("3) What year did World War II end?"
-                     " (Enter your answer as an integer.) ").strip()
-# If the user answers "1945", tell them they are correct
-if answer_3 == "1945":
-    print("Correct!")
-    # Add 1 to score variable for correct answer
-    score += 1
-# If user answers anything other than "1945", tell
-# them the answer is incorrect and give them the
-# correct answer
-else:
-    print("Incorrect.  The answer is 1945.")
-# print blank line
-print()
-
-# Ask question 4 and read in user input
-answer_4 = input("4) What is the largest ocean on Earth? ").lower().strip()
-# If the user answers "Pacific" or "Pacific Ocean", tell them
-# the answer is correct
-if answer_4 == "pacific" or answer_4 == "pacific ocean":
-    print("Correct!")
-    # Add 1 to score variable for correct answer
-    score += 1
-# If user enters anything else, tell them the answer is
-# incorrect and give them the correct answer
-else:
-    print("Incorrect.  The answer is \"Pacific\".")
-# Print blank line
-print()
-
-# Ask question 5 and read in user input
-answer_5 = input("5) How many sides does a hexagon have?"
-                 " (Enter your answer as an integer) ").strip()
-# If the user answers "6", tell them the answer is correct
-if answer_5 == "6":
-    print("Correct!")
-    # Add 1 to score variable for correct answer
-    score += 1
-# If the user enters anything other than "6", tell them
-# the answer is incorrect and give them the correct
-# answer
-else:
-    print("Incorrect.  The answer is 6.")
-# Print blank line
-print()
-# Display the user's quiz score.
-print(f"You scored {score} out of 5 ({(score/5) * 100:.0f}%) on the quiz.")
-
-
-
+# Run the program only if this file is executed directly, not imported as a module
+if __name__ == "__main__":
+    # Call main() function
+    main()
