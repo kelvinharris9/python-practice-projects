@@ -49,9 +49,9 @@ def display_user_score():
 
 # Define the main function
 def main():
-    # Call greeting() function
     greeting()
-    # Call ask_question() function 5 times (1 for each quiz question)
+
+    # Ask all 5 quiz questions
     ask_question("1) What is the capital of France?", "Paris")
     ask_question("2) How many planets are in our solar system?", ("8", "Eight"))
     ask_question("3) What year did World War II end? (enter "
@@ -59,10 +59,9 @@ def main():
     ask_question("4) What is the largest ocean on Earth?",
                  ("Pacific", "Pacific Ocean", "The Pacific Ocean", "The Pacific"))
     ask_question("5) How many sides does a hexagon have?", ("6", "Six"))
-    # Call display_user_score() function
+
     display_user_score()
 
 # Run the program only if this file is executed directly, not imported as a module
 if __name__ == "__main__":
-    # Call main() function
     main()
