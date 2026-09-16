@@ -10,14 +10,14 @@ def get_units():
     global from_unit
     global to_unit
     # Prompt user to enter from unit
-    print("Enter the unit of measurement you want to convert from."
+    print("Enter the unit of measurement you want to convert from. "
           "(Single-letter abbreviation only)")
     # Read in from unit from user input
     from_unit = input("From: ").capitalize().strip()
     # Print blank line
     print()
     # Prompt user to enter to unit
-    print("Enter the unit of measurement you want to convert to."
+    print("Enter the unit of measurement you want to convert to. "
           "(Single-letter abbreviation only)")
     # Read in to unit from user input
     to_unit = input("To: ").capitalize().strip()
