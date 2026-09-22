@@ -4,7 +4,7 @@ user_verb = ""
 user_adjective = ""
 user_place = ""
 
-#Define function to read in user input
+# Define function to read in user input
 def get_input():
     # Allows this function to modify each of the global variables listed
     global user_noun
