@@ -4,7 +4,6 @@ tip_percentage = -1
 tip_amount = 0
 total_amount = 0
 
-
 # Define function to greet user
 def greeting():
     print("Hello.  I am Skip the Tip Calculator.\n")
