@@ -39,7 +39,7 @@ def add_task(tasks):
     print("\n")
     # Add task to Python list
     tasks.append(f"-> {new_task}")
-    # Overwrite txt. file with contents of Python list
+    # Overwrite .txt file with contents of Python list
     save_tasks(tasks)
 
 # Define function that deletes tasks from the list
@@ -60,13 +60,13 @@ def delete_task(tasks):
         # Delete task (converting from 1-based index
         # to  0-based index)
         tasks.pop(task_to_delete - 1)
-        # Overwrite txt. file with contents of tasks list
+        # Overwrite .txt file with contents of tasks list
         save_tasks(tasks)
     # If list is empty, notify user
     if not tasks:
         print("You have no tasks at this time.\n")
 
-# Define function to overwrite txt. file with contents of tasks list
+# Define function to overwrite .txt file with contents of tasks list
 def save_tasks(tasks):
     # Open file in write mode; create file if it does not exist
     with open("tasks.txt", "w") as f:
