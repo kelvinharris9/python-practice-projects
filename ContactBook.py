@@ -1,6 +1,6 @@
 import json
 
-# Define function to read in .json file
+# Define function to read in contacts.json file
 def load_contacts():
     try:
         with open("contacts.json", "r") as f:
