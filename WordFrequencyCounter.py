@@ -26,7 +26,7 @@ def parse_list():
     # Allow this function to modify global variable counts
     global counts
     for word in words:
-        # Skip if not a word, for example a loose hyphen
+        # Skip if not a word (for example, a loose hyphen)
         if not word:
             continue
         # Count appearances of each word
@@ -37,7 +37,7 @@ def parse_list():
 
 # Function to display word counts to user
 def display_counts():
-    # Separate and sort the 10 most frequent words in .txt file
+    # Separate and sort 10 most frequent words in .txt file into separate list
     top_10 = sorted(counts.items(), key=lambda item: item[1], reverse=True)[:10]
     print("Top 10 Most Frequent Words")
     print("-------------------------------")
@@ -47,8 +47,7 @@ def display_counts():
 
 # Main function
 def main():
-    # After executing main function, continue
-    # only if .txt file is found
+    # After executing main function, continue only if .txt file is found
     if read_in_file():
         parse_list()
         display_counts()
