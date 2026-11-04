@@ -111,6 +111,7 @@ def main():
     get_temp()
     determine_conversion()
 
+
 # Run the program only if this file is executed directly, not imported as a module
 if __name__ == "__main__":
     main()
