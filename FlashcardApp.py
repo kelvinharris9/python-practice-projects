@@ -46,6 +46,6 @@ def main():
     greeting()
     quiz(flashcards)
 
-# Run program only if file is executed directly, not imported as a module
+# Run this program only if file is executed directly, not imported as a module
 if __name__ == "__main__":
     main()
