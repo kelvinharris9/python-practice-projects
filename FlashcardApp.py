@@ -30,7 +30,8 @@ def quiz(flashcards):
             user_score += 1
             question_num += 1
         else:
-            print("Incorrect.\n\n")
+            # Display correct answer if user's answer is incorrect
+            print(f"Incorrect.  The correct answer is: {answer}.\n\n")
             question_num += 1
     question_num -= 1
     display_score(user_score, question_num)
