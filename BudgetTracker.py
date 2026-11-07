@@ -37,10 +37,17 @@ def add_income():
     # Allow this function to modify these global variables
     global entries, total_income, balance
     # Prompt user to enter details
-    description = input("Enter the source of income.  (e.g. Paycheck)\n"
+    description = input("Enter the source of income (e.g. Paycheck) or enter \"000\" to cancel.\n"
                         "Type here -> ").title().strip()
-    amount = round(float(input("Enter the amount of income.  (Exclude dollar sign)\n"
+    if description == "000":
+        print("Entry cancelled.\n\n")
+        return
+    amount = round(float(input("Enter the amount of income (exclude dollar sign) or enter \"000\" to cancel.\n"
                    "Type here -> ")), 2)
+    if amount == 000:
+        print("Entry cancelled.\n\n")
+        return
+    print("\n")
     # Append entry to list
     entries.append({"description": description, "type": "income", "amount": amount})
     # Adjust totals
@@ -54,10 +61,17 @@ def add_expense():
     # Allow this function to modify these global variables
     global entries, total_expenses, balance
     # Prompt user to enter details
-    description = input("Enter the name of the expense.  (e.g. Groceries)\n"
+    description = input("Enter the name of the expense (e.g. Groceries) or enter \"000\" to cancel.\n"
                         "Type here -> ").title().strip()
-    amount = round(float(input("Enter the amount of the expense.  (Exclude dollar sign)\n"
+    if description == "000":
+        print("Entry cancelled.\n\n")
+        return
+    amount = round(float(input("Enter the amount of the expense (exclude dollar sign) or enter \"000\" to cancel.\n"
                    "Type here -> ")), 2)
+    if amount == 000:
+        print("Entry cancelled.\n\n")
+        return
+    print("\n")
     # Append entry to list
     entries.append({"description": description, "type": "expense", "amount": amount})
     # Adjust totals
@@ -71,9 +85,12 @@ def delete_entry():
     # Allow this function to modify these global variables
     global entries, balance, total_expenses, total_income
     # Ask user which entry to delete
-    entry_to_delete = input("Enter the expense or source of income you wish to delete.\n"
+    entry_to_delete = input("Enter the expense or source of income you wish to delete, or enter \"000\" to cancel.\n"
                             "Type here -> ").title().strip()
-    print()
+    if entry_to_delete == "000":
+        print("Deletion cancelled.\n\n")
+        return
+    print("\n")
     # Adjust totals
     for entry in entries:
         if entry_to_delete == entry["description"]:
